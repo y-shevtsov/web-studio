@@ -271,3 +271,85 @@ body {
 .footer-link:hover {
 	text-decoration: underline;
 }
+
+/* PORTFOLIO */
+.portfolio {
+	margin: 94px 0 0;
+	text-align: center;
+}
+
+.portfolio-nav {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.portfolio-btn {
+	padding: 10px 25px;
+	background: #F5F4FA;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 16px;
+	transition: all 0.3s;
+}
+
+.portfolio-btn:hover,
+.portfolio-btn:focus {
+	background: #2196F3;
+	color: #fff;
+}
+
+/* GROUPE CARDS */
+.groupe-cards {
+	padding: 50px 0 94px;
+}
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+}
+
+.card {
+	border: 1px solid #eeeeed;
+	overflow: hidden;
+	transition: box-shadow 0.3s;
+	position: relative;
+}
+
+.card:hover {
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-link {
+	position: relative;
+	overflow: hidden;
+}
+
+.card-link img {
+	width: 100%;
+	height: auto;
+	transition: transform 0.5s;
+}
+
+.card:hover .card-link img {
+	transform: scale(1.05);
+}
+
+.card-inner {
+	padding: 20px 24px;
+}
+
+.card-title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 12px;
+}
+
+.card-desc {
+	font-weight: 400;
+	font-size: 16px;
+	color: #757575;
+}
