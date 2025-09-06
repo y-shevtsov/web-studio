@@ -274,7 +274,7 @@ body {
 
 /* PORTFOLIO */
 .portfolio {
-	margin: 94px 0 0;
+	padding: 94px 0 0;
 	text-align: center;
 }
 
@@ -307,12 +307,13 @@ body {
 }
 
 .cards {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	display: flex;
+	flex-wrap: wrap;
 	gap: 30px;
 }
 
 .card {
+	flex: 1 1 370px;
 	border: 1px solid #eeeeed;
 	overflow: hidden;
 	transition: box-shadow 0.3s;
@@ -325,17 +326,35 @@ body {
 
 .card-link {
 	position: relative;
+	display: block;
 	overflow: hidden;
+}
+
+.card-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(33, 150, 243, 0.90);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 63px 24px;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.card:hover .card-overlay {
+	opacity: 1;
 }
 
 .card-link img {
 	width: 100%;
 	height: auto;
-	transition: transform 0.5s;
-}
-
-.card:hover .card-link img {
-	transform: scale(1.05);
 }
 
 .card-inner {
