@@ -86,6 +86,51 @@ body {
 	color: #2196F3;
 }
 
+.dropdown {
+	position: relative;
+}
+
+.dropdown-toggle {
+	cursor: pointer;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background: #bcd7f8;
+	min-width: 150px;
+}
+
+.dropdown-menu a {
+	display: block;
+	padding: 10px 20px;
+}
+
+.dropdown-menu a:hover {
+	background-color: #f0f0f0;
+	color: #2196F3;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.sub-dropdown {
+	position: relative;
+}
+
+.sub-dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 100%;
+	background: #bcd7f8;
+	min-width: 150px;
+}
+
+.sub-dropdown:hover .sub-dropdown-menu {
+	display: block;
+}
 
 /* HERO SECTION */
 
