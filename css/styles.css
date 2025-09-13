@@ -135,7 +135,7 @@ body {
 /* HERO SECTION */
 
 .hero {
-	background: #2F303A;
+	background: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.6)), url("../images/banner.png") center/cover no-repeat;
 	text-align: center;
 }
 
@@ -183,7 +183,32 @@ body {
 .about-item {
 	flex: 1 1 200px;
 	min-width: 200px;
-	max-width: 250px;
+	max-width: 270px;
+	position: relative;
+	padding-top: 150px;
+}
+
+.about-item::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120px;
+	background: #F5F4FA url("../images/antenna.svg") center no-repeat;
+	border-radius: 6px;
+}
+
+.about-item.clock::before {
+	background-image: url("../images/clock.svg");
+}
+
+.about-item.diagram::before {
+	background-image: url("../images/diagram.svg");
+}
+
+.about-item.astronaut::before {
+	background-image: url("../images/astronaut.svg");
 }
 
 .about-title {
