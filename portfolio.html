@@ -16,10 +16,16 @@
 				<img src="images/header-logo.svg" alt="WbStudio" width="145" height="31">
 			</a>
 
+			<button class="burger" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+
 			<!-- main menu -->
 			<nav class="header-menu">
-				<a href="#" class="active">Studio</a>
-				<a href="portfolio.html">Portfolio</a>
+				<a href="index.html">Studio</a>
+				<a href="portfolio.html" class="active">Portfolio</a>
 				<a href="#">Contacts</a>
 
 				<div class="dropdown">
@@ -197,5 +203,45 @@
 		</div>
 	</footer>
 </body>
+
+<script>
+	const burger = document.querySelector('.burger');
+	const menu = document.querySelector('.header-menu');
+
+	burger.addEventListener('click', () => {
+		burger.classList.toggle('active');
+		menu.classList.toggle('active');
+	});
+
+	// Логика для dropdown (только при клике)
+	document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+		toggle.addEventListener('click', e => {
+			e.preventDefault();
+			const parent = toggle.parentElement;
+
+			// Закрывать другие открытые dropdown-меню
+			document.querySelectorAll('.dropdown').forEach(d => {
+				if (d !== parent) d.classList.remove('open');
+			});
+
+			parent.classList.toggle('open');
+		});
+	});
+
+	// Логика для sub-dropdown (тоже только по клику)
+	document.querySelectorAll('.sub-dropdown > a').forEach(toggle => {
+		toggle.addEventListener('click', e => {
+			e.preventDefault();
+			const parent = toggle.parentElement;
+
+			// Закрывать другие sub-dropdown
+			document.querySelectorAll('.sub-dropdown').forEach(d => {
+				if (d !== parent) d.classList.remove('open');
+			});
+
+			parent.classList.toggle('open');
+		});
+	});
+</script>
 
 </html>
